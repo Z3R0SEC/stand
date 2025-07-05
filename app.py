@@ -1,6 +1,7 @@
 from flask import Flask, request
 import requests
 import os
+from threading import Thread
 
 app = Flask(__name__)
 
@@ -72,5 +73,15 @@ def webhook():
     return 'ok'
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+   def run():
+       app.run(host='0.0.0.0', port=5001)
+
+   def keep_alive():
+       import os
+       os.system("clear")
+       print("[›] UPTIME ROBOT: ALIVE!")
+       t = Thread(target=run)
+       t.start()
+
+   keep_alive()
