@@ -5,7 +5,7 @@ from threading import Thread
 
 app = Flask(__name__)
 
-PAGE_ACCESS_TOKEN = ''
+PAGE_ACCESS_TOKEN = 'EAAPRPyHULIABPB2H0R38nEwXKUZAXN437uMa40iIdIZCgVZCDwRZCJZAuvdZB5Gu4PIok9sHTY97vnn3gUMVZCHuDyjFnH3THl2GcRenolCpPv2yuAi93XuUGJ40djpeBS5H7BV0BuTjBCeQOwdAKDNiuWLzMT4rfhv99AN4C55ZB8qxoZAXtyJr8cdqBF5smItdTYZB3pNRwiWwZDZD'
 VERIFY_TOKEN = 'standby'
 
 FB_URL = 'https://graph.facebook.com/v17.0/me/messages'
