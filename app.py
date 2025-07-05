@@ -58,7 +58,7 @@ def webhook():
                         user_msg = msg['text']
                         appi = "https://supai.onrender.com"
                         para = { "user": sender_id, "message": user_msg }
-                        romb = requests.get(appi, params=para).json().get("response", "")
+                        romb = requests.get(appi, params=para).text
                         reply = romb
                     elif 'attachments' in msg:
                         reply = "You sent an attachment. I can’t read it yet, my developer is working on it."
