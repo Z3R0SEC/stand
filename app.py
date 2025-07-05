@@ -50,12 +50,16 @@ def webhook():
         for entry in data.get('entry', []):
             for messaging_event in entry.get('messaging', []):
                 sender_id = messaging_event['sender']['id']
+                
 
                 if 'message' in messaging_event:
                     msg = messaging_event['message']
                     if 'text' in msg:
                         user_msg = msg['text']
-                        reply = f"You said: {user_msg}"
+                        appi = "https://supai.onrender.com"
+                        para = { "user": sender_id, "message": user_msg }
+                        romb = requests.get(appi, params=para).json().get("response", "")
+                        reply = romb
                     elif 'attachments' in msg:
                         reply = "You sent an attachment. I can’t read it yet, my developer is working on it."
 
