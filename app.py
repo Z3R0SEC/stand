@@ -56,10 +56,10 @@ def webhook():
                     msg = messaging_event['message']
                     if 'text' in msg:
                         user_msg = msg['text']
-                        appi = "https://supai.onrender.com"
+                        appi = "https://supai.onrender.com/api/ai"
                         para = { "user": sender_id, "message": user_msg }
-                        romb = requests.get(appi, params=para).text
-                        reply = romb
+                        romb = requests.get(appi, params=para).json()
+                        reply = romb.get("response", "Hi, Sorry Im Under Going Maintenance! To View or Track your Order Click Below. Button. If You cant See Button Try Using Messenger")
                     elif 'attachments' in msg:
                         reply = "You sent an attachment. I can’t read it yet, my developer is working on it."
 
