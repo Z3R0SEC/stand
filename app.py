@@ -19,22 +19,12 @@ def send_message(recipient_id, message_text):
                 'type': 'template',
                 'payload': {
                     'template_type': 'button',
-                    'text': message_text,
+                    'text': f"{message_text}\n",
                     'buttons': [
                         {
                             "type": "web_url",
-                            "url": "https://example.com",
-                            "title": "Visit Website"
-                        },
-                        {
-                            "type": "web_url",
-                            "url": "https://example.com/store",
-                            "title": "Shop Now"
-                        },
-                        {
-                            "type": "web_url",
-                            "url": "https://example.com/support",
-                            "title": "Get Support"
+                            "url": f"https://chun.x10.bz/trackmyorder?client={recipient_id}&value=track",
+                            "title": "Track My Order"
                         }
                     ]
                 }
